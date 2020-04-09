@@ -1,6 +1,6 @@
 ## Register our custom page action
 record_types = AppConfig.has_key?(:aeon_fulfillment_record_types) ? AppConfig[:aeon_fulfillment_record_types]
-                                                                  : ['archival_object', 'accession', 'resource']
+                                                                  : ['archival_object', 'accession', 'resource','top_container']
 
 button_position = AppConfig.has_key?(:aeon_fulfillment_button_position) ? AppConfig[:aeon_fulfillment_button_position] : nil
 

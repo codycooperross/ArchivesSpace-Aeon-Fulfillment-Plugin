@@ -404,8 +404,13 @@ class AeonRecordMapper
 
         current_uri = record_json['uri']
 
+
         Rails.logger.info("Aeon Fulfillment Plugin") { "Checking \"#{current_uri}\" for Top Container instances..." }
         Rails.logger.debug("Aeon Fulfillment Plugin") { "#{record_json.to_json}" }
+
+        if record_json['jsonmodel_type'] == 'top_container'
+            return record_json
+        end
 
         instances = record_json['instances']
             .reject { |instance| instance['digital_object'] }
